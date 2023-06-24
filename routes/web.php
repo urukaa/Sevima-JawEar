@@ -30,5 +30,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/', 'index');
         Route::get('/classroom/create', 'create');
         Route::post('/classroom/create','store');
+        Route::get('/classroom/join','join');
+        Route::post('/classroom/join','joined');
     });
 });

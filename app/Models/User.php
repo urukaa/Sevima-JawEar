@@ -47,4 +47,10 @@ class User extends Authenticatable
     {
         return $this->beLongsTo(Role::class, 'role_id');
     }
+
+    public function Classrooms()
+    {
+        return $this->beLongsToMany(Classroom::class);
+    }
+
 }

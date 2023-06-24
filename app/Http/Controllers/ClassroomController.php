@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\Classroom;
+use App\Models\User;
 
 class ClassroomController extends Controller
 {
 
     function index() {
-        $classrooms = Classroom::all();
+        $classrooms = Classroom::where('user_id', auth()->user()->id)->get();
+        // dd($classrooms);
         return view('dashboard', compact('classrooms'));
     }
 
@@ -31,5 +33,16 @@ class ClassroomController extends Controller
         ]);
 
         return redirect('/');
+    }
+
+    function join(){
+
+        return view('classroom.joinClassroom');
+    }
+
+    function joined(Request $req) {
+        $classrooms = Classroom::where('code', $req->code)->get();
+        $classrooms->Classrooms()->attach(' ');
+        
     }
 }
