@@ -1,16 +1,16 @@
 @extends('template.auth')
 
-<!-- partial:index.partial.html -->
+
 @section('content')
 
 <main>
-    <!-- S: Header -->
+
     <header class="jumbotron">
         <div class="container text-center">
             <h1 class="display-4">This is Logo</h1>
         </div>
     </header>
-    <!-- E: Header -->
+
 
     <div class="container">
         <div class="row justify-content-center">
@@ -40,5 +40,5 @@
         </div>
     </div>
 </main>
-    <!-- partial -->
+
 @endsection

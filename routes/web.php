@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ClassroomController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,8 +26,9 @@ Route::middleware(['guest'])->group(function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('/logout', [AuthController::class, 'logout']);
 
-
-            Route::get('/', function () {
-                return view('welcome');
-            });
+    Route::controller(ClassroomController::class)->group(function () {
+        Route::get('/', 'index');
+        Route::get('/classroom/create', 'create');
+        Route::post('/classroom/create','store');
+    });
 });
