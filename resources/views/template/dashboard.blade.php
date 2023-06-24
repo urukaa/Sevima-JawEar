@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>JawEar</title>
+    <link rel="shortcut icon" href="{{asset('favicon/android-icon-144x144.png')}}" type="image/x-icon">
     <link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('css/custom.css')}}">
 </head>

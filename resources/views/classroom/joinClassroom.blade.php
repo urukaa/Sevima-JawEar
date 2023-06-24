@@ -10,10 +10,12 @@
         </div>
     </header>
 
-
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+            @if (Session::has('message'))
+                <div class="alert alert-danger">{{ Session::get('message') }}</div>
+            @endif
             <div class="card">
                 <div class="card-header">
                     <h5 class="m-0 mt-1 p-0">Join Classroom</h5></div>

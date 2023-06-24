@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClassroomController;
+use App\Http\Controllers\AssignmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,5 +33,12 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/classroom/create','store');
         Route::get('/classroom/join','join');
         Route::post('/classroom/join','joined');
+        Route::get('/classroom/detail/{id}','detail');
     });
+
+    Route::controller(AssignmentController::class)->group(function () {
+        Route::get('/assignment/create', 'create');
+        Route::post('/assignment/create', 'store');
+    });
+
 });
