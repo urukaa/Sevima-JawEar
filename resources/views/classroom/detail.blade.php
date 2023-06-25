@@ -31,7 +31,7 @@
                             </div>
                             <div class="col-4">
                                 <h5><audio src=""></audio></h5>
-                                <span class="text-muted">{{$assigntment->answer}}</span>
+                                <span class="text-muted">{{$assignment->answer}}</span>
                             </div>
                         </div>
                     </article>
