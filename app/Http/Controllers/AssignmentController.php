@@ -45,6 +45,6 @@ class AssignmentController extends Controller
             'answer' => $req->answer
         ]);
 
-        return redirect('/');
+        return response()->file($audioFilePath, $headers);
     }
 }
