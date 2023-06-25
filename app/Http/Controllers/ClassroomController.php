@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\Classroom;
 use App\Models\User;
+use App\Models\Assignment;
 use Session;
 
 class ClassroomController extends Controller
@@ -38,7 +39,8 @@ class ClassroomController extends Controller
 
 
     function detail(Classroom $id) {
-        return view('classroom.detail', compact('id'));
+        $assignments = Assignment::all();
+        return view('classroom.detail', compact('id', 'assignments'));
     }
 
 

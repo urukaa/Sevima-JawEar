@@ -21,23 +21,21 @@
 
             <div class="section-body">
 
-                    <article class="spot">
-                        <div class="row">
-                            <div class="col-5">
-                                <h5 class="text-primary">ULANGAN HARIAN 1</h5>
-                                <span class="text-muted">deadline : 10-10-23</span>
+                @foreach ($assignments as $assignment)
+
+                <article class="spot">
+                    <div class="row">
+                        <div class="col-5">
+                            <h5 class="text-primary">{{$assignment->title}}</h5>
+                                <span class="text-muted">{{$assignment->deadline}}</span>
                             </div>
                             <div class="col-4">
-                                <h5>Code</h5>
-                                <span class="text-muted">asdfa</span>
-                            </div>
-                            <div class="col-3">
-                              {{-- <a class="btn btn-success btn-lg btn-block" href="/classroom/detail/{{$classroom->id}}"> --}}
-                                    Detail
-                                </a>
+                                <h5><audio src=""></audio></h5>
+                                <span class="text-muted">{{$assigntment->answer}}</span>
                             </div>
                         </div>
                     </article>
+                    @endforeach
             </div>
 
 
