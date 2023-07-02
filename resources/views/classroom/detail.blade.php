@@ -15,7 +15,7 @@
 
             <div class="section-header mb-4">
                 <h5>
-                    <a class="section-title" href="/assignment/create">+ Create Assignment</a>
+                    <a class="section-title" href="/assignment/create/{{$id->id}}">+ Create Assignment</a>
                 </h5>
             </div>
 

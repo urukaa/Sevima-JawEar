@@ -14,7 +14,8 @@ class ClassroomController extends Controller
 
     function index() {
         $classrooms = Classroom::where('user_id', auth()->user()->id)->get();
-        $students = User::where('id', auth()->user()->id)->with('Classrooms')->get();
+        $students = User::where('id', auth()->user()->id)->with('Classrooms')->first();
+        // dd($students->classrooms);
         return view('dashboard', compact('classrooms', 'students'));
     }
 
@@ -39,7 +40,7 @@ class ClassroomController extends Controller
 
 
     function detail(Classroom $id) {
-        $assignments = Assignment::all();
+        $assignments = Assignment::where('classroom_id', $id->id)->get();
         return view('classroom.detail', compact('id', 'assignments'));
     }
 

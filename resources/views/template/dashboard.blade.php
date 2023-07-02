@@ -11,7 +11,7 @@
 
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
     <div class="container">
-        <a class="navbar-brand" href="#">JawEar</a>
+        <a class="navbar-brand" href="/">JawEar</a>
             <ul class="navbar-nav ml-auto col-9">
                 <li class="nav-item">
                     <a class="nav-link" href="#">Classroom</a>

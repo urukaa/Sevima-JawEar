@@ -5,14 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use COM;
 use App\Models\Assignment;
+use App\Models\Classroom;
 
 class AssignmentController extends Controller
 {
-    function create() {
-        return view('classroom.newAssignment');
+    function create(Classroom $id) {
+        return view('classroom.newAssignment', compact('id'));
     }
 
-    function store(Request $req) {
+    function store(Request $req, Classroom $id) {
+
+
         $req->validate([
             'title' => 'required|string',
             'deadline' => 'required',
@@ -41,10 +44,16 @@ class AssignmentController extends Controller
         Assignment::create([
             'title' => $req->title,
             'deadline' => $req->deadline,
-            'question' => $audioFilePath,
-            'answer' => $req->answer
+            // 'question' => $audioFilePath,
+            'question' => $req->question, //SEMENTARA
+            'answer' => $req->answer,
+            'user_id' => auth()->user()->id,
+            'classroom_id' => $id->id,
         ]);
 
-        return response()->file($audioFilePath, $headers);
+        // dd($id);
+        // return response()->file($audioFilePath, $headers);
+        return redirect('/classroom/detail/'. $id->id);
+
     }
 }

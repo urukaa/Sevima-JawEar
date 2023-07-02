@@ -12,6 +12,8 @@ class Assignment extends Model
         'title',
         'deadline',
         'question',
-        'answer'
+        'answer',
+        'user_id',
+        'classroom_id'
     ];
 }

@@ -18,7 +18,7 @@
                 <div class="card-header">
                     <h5 class="m-0 mt-1 p-0">New Assignment</h5></div>
                 <div class="card-body">
-                    <form action="/assignment/create" method="POST">
+                    <form action="/assignment/create/{{$id->id}}" method="POST">
                         @csrf
                         <div class="form-group">
                             <label for="name">Title</label>
@@ -32,7 +32,7 @@
 
                         </div>
                         <div class="form-group mt-3">
-                            <a href="/classroom" class="btn btn-secondary mr-1">Back</a>
+                            <a href="/" class="btn btn-secondary mr-1">Back</a>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </form>

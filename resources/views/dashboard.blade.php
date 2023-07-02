@@ -57,12 +57,12 @@
             </div>
 
                 <div class="section-body">
-                    @forelse ($students as $student)
+                    @forelse ($students->Classrooms as $student)
                     <article class="spot">
                         <div class="row">
                             <div class="col-5">
                         <h5 class="text-primary">Class Name</h5>
-                        <span class="text-muted">{{$student->Classrooms}}</span>
+                        <span class="text-muted">{{$student->name}}</span>
                     </div>
                     <div class="col-4">
                     </div>

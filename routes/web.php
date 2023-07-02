@@ -41,8 +41,8 @@ Route::middleware(['auth'])->group(function () {
         });
     Route::middleware(['role:2'])->group(function () {
         Route::controller(AssignmentController::class)->group(function () {
-            Route::get('/assignment/create', 'create');
-            Route::post('/assignment/create', 'store');
+            Route::get('/assignment/create/{id}', 'create');
+            Route::post('/assignment/create/{id}', 'store');
         });
     });
 
