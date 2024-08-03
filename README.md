@@ -32,7 +32,7 @@ To Setup Environment
   cp .env.example .env
 ```
 
-Start the server
+## Start the server
 
 ```bash
   php artisan serve
